@@ -1,0 +1,70 @@
+<html>
+    <body>
+        <div class="header">
+            <span>
+                RecoLearn
+            </span>
+        </div>
+        <div class='recommendations'>
+            <span class='title'>
+                Recommendations :
+            </span>
+            <br>
+            {% for i in data %}
+            <div class='recc-disp'>
+                <div class='img-disp'>
+                </div>
+                <span class='recc-title'>
+                    {{i}}
+                </span>                
+            </div>           
+            {% endfor %}                        
+        </div>
+    </body>
+    <style>
+        body{
+            font-family:'Trebuchet MS', sans-serif;
+        }
+        .header{
+            width: 100%;
+            height: 50px;
+            text-align: center;
+            padding: 10px;
+        }
+        .header span{            
+            font-size:30px;                                    
+        }
+        .recommendations{
+            display: block;
+            margin: 10px;
+            width: 95%;
+            height: auto;
+            margin-top:50px;
+            border-radius: 50px;
+            padding: 20px;
+            background-color: lightgray;            
+        }
+        .recommendations .title{
+            color:gray;
+
+        }
+        .recc-disp{
+            display: inline-block;
+            width:150px;
+            height:300px;            
+            opacity: 50%;
+            margin: 10px;
+        }
+        .recc-disp .img-disp{
+            background-color: #2266FF;
+            width: 100%;
+            height:60%;
+        }
+        .recc-disp .recc-title{
+            font-size:20px;            
+            height:30%;
+            overflow: hidden;
+        }
+
+    </style>
+</html>
