@@ -8,7 +8,7 @@ def recommend(user_id):
 
     #already_rated =[ int(x) for x in load_database()['ALREADY_RATED'] ]
     already_rated = []
-    k = 7
+    k = 8
     m_dir = './tensorflow-recommendation-wals/wals_ml_engine/jobs/wals_ml_local_20210116_103341/model'
     #user_map = np.load(m_dir+"/user.npy")
     item_map = np.load(m_dir+"/item.npy")
@@ -35,8 +35,11 @@ def recommend(user_id):
 
 def index(request):    
     #model.wals_ml_engine.trainer.model.generate_recommendations()
-
+    user_id = int(request.GET['user_id'])
+    if user_id < 1 or user_id > 942 :
+        return HttpResponse("user_id should be in rannge 1-942")
     context = {
-        "data" : recommend(int(request.GET['user_id']))
+        "data" : recommend(user_id),
+        "user_id" : user_id
     }
     return render(request, 'index.html', context=context)

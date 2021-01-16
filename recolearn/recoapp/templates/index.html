@@ -1,24 +1,29 @@
 <html>
     <body>
         <div class="header">
-            <span>
+            <span class='title'>
                 RecoLearn
             </span>
+            <span class='user'>
+                Current User ID : {{ user_id }}
+            </span>     
         </div>
         <div class='recommendations'>
             <span class='title'>
                 Recommendations :
-            </span>
-            <br>
-            {% for i in data %}
-            <div class='recc-disp'>
-                <div class='img-disp'>
-                </div>
-                <span class='recc-title'>
-                    {{i}}
-                </span>                
-            </div>           
-            {% endfor %}                        
+            </span>                       
+            <div id="main">
+                <ul>
+                    {% for i in data %}   
+                 <li>
+                  <a class="thumbnailhr" href=""><img src="https://i.stack.imgur.com/Vkq2a.png"></a>
+                   <div class="link-bodyhor">
+                    <h3><a href="">{{ i }}</a></h3>
+                    </div>
+                 </li>   
+                 {% endfor %}                     
+                </ul>
+            </div>
         </div>
     </body>
     <style>
@@ -31,7 +36,7 @@
             text-align: center;
             padding: 10px;
         }
-        .header span{            
+        .header title{            
             font-size:30px;                                    
         }
         .recommendations{
@@ -45,8 +50,12 @@
             background-color: lightgray;            
         }
         .recommendations .title{
-            color:gray;
-
+            color:black;
+        }
+        .user{
+            left:0;
+            color : gray;
+            position: absolute;
         }
         .recc-disp{
             display: inline-block;
@@ -58,13 +67,53 @@
         .recc-disp .img-disp{
             background-color: #2266FF;
             width: 100%;
-            height:60%;
+            height:30px;            
         }
         .recc-disp .recc-title{
             font-size:20px;            
-            height:30%;
+            height:30px;
             overflow: hidden;
         }
 
     </style>
+    <style>        
+        #main ul
+        {
+        list-style:none;
+        text-align: center;      
+        height:500px;     
+        }    
+        #main li
+        {
+            display: inline-block !important;
+            overflow: hidden !important;
+            float: left !important;
+            width: 270px !important; 
+            padding-left:16px !important;
+            background: none !important;
+            margin: 0px 10px 0 0 !important;
+            border: none;
+            padding-right: 14px !important;
+        }
+        #main .thumbnailhr img
+        {
+        width:270px !important;   /* Thumbnail Width */
+        height:160px !important;  /* Thumbnail Height */
+        background-color: #2266FF;
+        opacity: 70%;
+        }
+        #main .link-bodyhor h3 a
+        {
+        font-size:16px !important;
+        color:black !important;
+        }
+        #main .link-bodyhor h3 a:visited
+        {
+        color:black !important;
+        }
+        #main .link-bodyhor h3 a:hover
+        {
+        color:orangered !important;
+        }
+        </style>
 </html>
