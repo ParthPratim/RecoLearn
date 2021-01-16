@@ -1,6 +1,8 @@
 # RecoLearn
 A Recommendation Engine for E-Learners
 
+Operating System Tested on : Ubuntu 20.04
+
 Run the following commands : 
 ```bash
 sudo apt-get update
