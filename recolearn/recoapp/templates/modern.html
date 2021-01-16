@@ -1,0 +1,73 @@
+<html>
+        <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+        <!-- Compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+            
+    <body>
+        <div class="header">
+            <span class='title'>
+                <b>RecoLearn</b>
+                <div style="float: right;display: inline;">
+                    <i class="small material-icons ic">home</i>
+                    <i class="small material-icons ic">account_circle</i>
+                </div>                
+            </span>
+            <span class='user'>
+                Current User ID : {{ user_id }}
+            </span>     
+        </div>
+        <span class='recom-text'>
+            Recommendations
+        </span>
+        <div class="row" style="height:100px;">
+            {% for i in data %}   
+            <div class="col s12 m3">
+              <div class="card">
+                <div class="card-image purple-box">
+                  <img src="https://i.stack.imgur.com/Vkq2a.png">                  
+                </div>
+                <div class="card-content">
+                  <p>{{ i }}</p>
+                </div>
+              </div>
+            </div>                    
+            {% endfor %}
+          </div>
+    </body>
+    <style>        
+        .header{
+            width: 100%;
+            height: 50px;
+            text-align: center;
+            padding: 10px;
+            font-family:'Trebuchet MS', sans-serif;
+        }
+        .header .title{            
+            font-size:30px;                                    
+        }
+        .user{
+            left:0;
+            color : gray;
+            position: absolute;
+        }
+        .purple-box{
+            background-color: #2266FF;
+            opacity: 70%;
+            height: 200px;
+        }
+        .recom-text{
+            font-size:20px;
+            color: gray;
+            display: block;
+            margin: 10px;
+        }
+        .ic{
+            color:#2266FF;
+            margin-right: 10px;
+        }
+    </style>
+</html>

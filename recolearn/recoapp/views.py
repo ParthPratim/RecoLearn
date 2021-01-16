@@ -42,4 +42,4 @@ def index(request):
         "data" : recommend(user_id),
         "user_id" : user_id
     }
-    return render(request, 'index.html', context=context)
+    return render(request, 'modern.html', context=context)
